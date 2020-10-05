@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {Toolbar, Tabs, Box, Typography, Tab, AppBar, Paper} from "@material-ui/core";
+import {Toolbar, Tabs, Box, Tab, AppBar, Paper} from "@material-ui/core";
 import {Col, Container, Image, Row} from "react-bootstrap";
 import COLORS from "../colors";
-import fashionBlogger from '../assets/img/fashion-blogger.jpg'
-import fashionStylist from '../assets/img/fashion-stylist.jpg'
+import fashionBlogger from '../assets/img/fashion/fashion-blogger.jpg'
+import fashionStylist from '../assets/img/fashion/fashion-stylist.jpg'
 
 function TabPanel(props) {
 	const {children, value, index, ...other} = props;
@@ -47,18 +47,18 @@ class Fashion extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Container fluid style={{backgroundColor: 'rgba(17,29,94, 0.05)'}}>
+				<Container fluid>
 					<Row className='p-5'/>
-					<Row className='p-3'/>
 				</Container>
-				<Toolbar style={{backgroundColor: 'rgba(17,29,94, 0.05)'}}>
+				<Toolbar>
 					<Container>
 						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: COLORS.primary}}>Fashion</p>
 						<AppBar position='static' color='inherit'>
 							<Tabs
 								TabIndicatorProps={{
 									style: {
-										backgroundColor: COLORS.secondary
+										backgroundColor: COLORS.secondary,
+										height: 4
 									}
 								}}
 								value={this.state.value}
@@ -75,7 +75,7 @@ class Fashion extends Component {
 										 }}/>
 							</Tabs>
 						</AppBar>
-						<TabPanel value={this.state.value} index={0} style={{backgroundColor: 'white'}} className='mb-5'>
+						<TabPanel value={this.state.value} index={0} style={{backgroundColor: 'white'}} className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
 								<Row>
 									<Col xs={4}>
@@ -168,7 +168,7 @@ class Fashion extends Component {
 								</Row>
 							</Container>
 						</TabPanel>
-						<TabPanel value={this.state.value} index={1} style={{backgroundColor: 'white'}} className='mb-5'>
+						<TabPanel value={this.state.value} index={1} style={{backgroundColor: 'white'}} className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
 								<Row>
 									<Col xs={4}>

@@ -15,25 +15,26 @@ class NicheNavbar extends Component {
 						<Container fluid>
 							<Row style={{backgroundColor: COLORS.primary}} className='p-1'/>
 						</Container>
-						<Container className='p-0 my-3'>
-							<Row className='mb-3'>
-								<Col xl='2' md='3' lg='2' className='px-0'>
+						<Container className='my-3'>
+							<Row className='align-items-center justify-content-center'>
+								<Col xl='2' md='3' lg='2'>
 									<Image src={logo} style={{width: '100%'}}/>
 								</Col>
-								<Col/>
-							</Row>
-							<Row className='justify-content-start'>
-								{ROUTES.map((route, index) =>
-									<Link to={route.path} key={index} style={{
-										fontFamily: 'Poppins',
-										fontWeight: 600,
-										fontSize: 14,
-										textDecoration: 'inherit',
-										color: 'inherit'
-									}} className='my-auto mr-5'>
-										{route.name}
-									</Link>
-								)}
+								<Col>
+									<Row className='justify-content-end'>
+										{ROUTES.map((route, index) =>
+											<Link to={route.path} key={index} style={{
+												fontFamily: 'Poppins',
+												fontWeight: 600,
+												fontSize: 14,
+												textDecoration: 'inherit',
+												color: 'inherit'
+											}} className='my-auto mr-4'>
+												{route.name}
+											</Link>
+										)}
+									</Row>
+								</Col>
 							</Row>
 						</Container>
 					</Toolbar>
