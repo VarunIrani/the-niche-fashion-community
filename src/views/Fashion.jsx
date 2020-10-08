@@ -52,7 +52,7 @@ class Fashion extends Component {
 				</Container>
 				<Toolbar>
 					<Container>
-						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: COLORS.primary}}>Fashion</p>
+						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>Fashion</p>
 						<AppBar position='static' color='inherit'>
 							<Tabs
 								TabIndicatorProps={{
@@ -65,11 +65,11 @@ class Fashion extends Component {
 								aria-label="fashion tabs"
 								variant="scrollable"
 							>
-								<Tab label="Fashion Stylists" {...a11yProps(0)} style={{fontFamily: 'Montserrat', fontWeight: 'bold'}}
+								<Tab label="Fashion Bloggers" {...a11yProps(0)} style={{fontFamily: 'Montserrat', fontWeight: 'bold'}}
 										 onClick={() => {
 											 this.handleChange(0)
 										 }}/>
-								<Tab label="Fashion Bloggers" {...a11yProps(1)} style={{fontFamily: 'Montserrat', fontWeight: 'bold'}}
+								<Tab label="Fashion Stylists" {...a11yProps(1)} style={{fontFamily: 'Montserrat', fontWeight: 'bold'}}
 										 onClick={() => {
 											 this.handleChange(1)
 										 }}/>

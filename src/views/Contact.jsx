@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Toolbar} from "@material-ui/core";
 import {Container, Row} from "react-bootstrap";
-import COLORS from "../colors";
 
 class Contact extends Component {
 	render() {
@@ -9,11 +8,10 @@ class Contact extends Component {
 			<React.Fragment>
 				<Container fluid >
 					<Row className='p-5'/>
-					<Row className='p-3'/>
 				</Container>
 				<Toolbar >
 					<Container>
-						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: COLORS.primary}}>Contact Us</p>
+						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>Contact Us</p>
 					</Container>
 				</Toolbar>
 			</React.Fragment>

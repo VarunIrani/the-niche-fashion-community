@@ -16,7 +16,7 @@ class HealthFitness extends Component {
 				</Container>
 				<Toolbar>
 					<Container className='mb-5'>
-						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: COLORS.primary}}>Health &
+						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>Health &
 							Fitness</p>
 						<p style={{fontFamily: 'Poppins', fontSize: 18, color: 'black', fontWeight: 'bold'}}>Get Energised!, Maximised!,
 							Mickeymized! - by Aditi Kumari</p>

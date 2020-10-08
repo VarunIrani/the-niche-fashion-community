@@ -9,11 +9,10 @@ class NicheFocal extends Component {
 			<React.Fragment>
 				<Container fluid >
 					<Row className='p-5'/>
-					<Row className='p-3'/>
 				</Container>
 				<Toolbar >
 					<Container>
-						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: COLORS.primary}}>The Niche Focal</p>
+						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>The Niche Focal</p>
 					</Container>
 				</Toolbar>
 			</React.Fragment>

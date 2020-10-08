@@ -98,7 +98,7 @@ class About extends Component {
 				</Container>
 				<Toolbar>
 					<Container className='mb-5'>
-						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: COLORS.primary}}>About The Niche</p>
+						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>About The Niche</p>
 						<Row className='mb-5 align-items-center'>
 							<Col xl={4}>
 								<Paper elevation={3} style={{borderRadius: 10}}>
@@ -107,25 +107,25 @@ class About extends Component {
 							</Col>
 							<Col>
 								<Row className='justify-content-center'>
-									<h3 style={{fontFamily: 'Poppins', color: COLORS.primary}}>The Niche Fashion Arena International</h3>
+									<h3 style={{fontFamily: 'Poppins', color: 'white'}}>The Niche Fashion Arena International</h3>
 								</Row>
 								<Row className='justify-content-center'>
-									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold'}}>A Profile with a Big Success</h5>
+									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold', color: COLORS.secondary}}>A Profile with a Big Success</h5>
 								</Row>
 								<Row className='text-justify mt-2 px-5'>
-									<p style={{fontFamily: 'Poppins', fontWeight: 'bold'}}>With its unique concept, the magazine is
+									<p style={{fontFamily: 'Poppins', fontWeight: 'bold',color: 'white'}}>With its unique concept, the magazine is
 										committed to provide a
 										platform for the fashion community exclusively —Be it a Fashion or Interior Designer, Fashion Model,
 										Fashion Blogger, Fashion stylist, Fashion Choreographer, Makeover Stylist, Fashion Photographer or a
 										videographer, Accessories Merchandiser, Boutique Owner or Designer's Label Owner.</p>
 								</Row>
 								<Row className='text-justify mt-2 px-5'>
-									<p style={{fontFamily: 'Poppins', fontWeight: 'bold'}}>Online advertisers have opted to have their
+									<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: 'white'}}>Online advertisers have opted to have their
 										presence in the
 										magazine THE NICHE Fashion Arena International and reach out to the decision makers of fashion
 										community across India. Your full page in color in the magazine and a virtual online imagery of the
 										same page in its website — <span
-											style={{color: COLORS.primary, fontWeight: 'bold'}}>thenichefashioncommunity.in </span></p>
+											style={{color: COLORS.secondary, fontWeight: 'bold'}}>thenichefashioncommunity.in </span></p>
 								</Row>
 							</Col>
 						</Row>
