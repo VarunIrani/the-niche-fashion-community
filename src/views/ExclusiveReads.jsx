@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Toolbar} from "@material-ui/core";
 import {Container, Row} from "react-bootstrap";
-import COLORS from "../colors";
 
 class ExclusiveReads extends Component {
 	render() {

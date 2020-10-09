@@ -110,7 +110,7 @@ class About extends Component {
 									<h3 style={{fontFamily: 'Poppins', color: 'white'}}>The Niche Fashion Arena International</h3>
 								</Row>
 								<Row className='justify-content-center'>
-									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold', color: COLORS.secondary}}>A Profile with a Big Success</h5>
+									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold', color: '#ffce66'}}>A Profile with a Big Success</h5>
 								</Row>
 								<Row className='text-justify mt-2 px-5'>
 									<p style={{fontFamily: 'Poppins', fontWeight: 'bold',color: 'white'}}>With its unique concept, the magazine is
@@ -125,7 +125,7 @@ class About extends Component {
 										magazine THE NICHE Fashion Arena International and reach out to the decision makers of fashion
 										community across India. Your full page in color in the magazine and a virtual online imagery of the
 										same page in its website — <span
-											style={{color: COLORS.secondary, fontWeight: 'bold'}}>thenichefashioncommunity.in </span></p>
+											style={{color: '#ffce66', fontWeight: 'bold'}}>thenichefashioncommunity.in </span></p>
 								</Row>
 							</Col>
 						</Row>
