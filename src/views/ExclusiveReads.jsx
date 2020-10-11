@@ -3,6 +3,9 @@ import {Toolbar} from "@material-ui/core";
 import {Container, Row} from "react-bootstrap";
 
 class ExclusiveReads extends Component {
+	componentDidMount() {
+		document.title = 'Exclusive Reads - The Niche Fashion Community'
+	}
 	render() {
 		return (
 			<React.Fragment>

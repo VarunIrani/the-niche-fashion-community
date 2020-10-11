@@ -40,6 +40,10 @@ class Fashion extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 
+	componentDidMount() {
+		document.title = 'Fashion - The Niche Fashion Community'
+	}
+
 	handleChange(value) {
 		this.setState({value});
 	}

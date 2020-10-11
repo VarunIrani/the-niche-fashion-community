@@ -44,6 +44,10 @@ class About extends Component {
 		this.showModal = this.showModal.bind(this)
 	}
 
+	componentDidMount() {
+		document.title = 'About - The Niche Fashion Community'
+	}
+
 	showModal(modalShow) {
 		this.setState({modalShow})
 	}
@@ -57,6 +61,7 @@ class About extends Component {
 	}
 
 	render() {
+
 		return (
 			<React.Fragment>
 				{this.state.member ?
@@ -76,7 +81,7 @@ class About extends Component {
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
 												<Image src={this.state.member.image} alt={this.state.member.name}
-															 style={{borderRadius: '100%'}}/>
+															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}}
 												 className='mt-2 p-0 m-0'>{this.state.member.name}</p>
@@ -161,7 +166,7 @@ class About extends Component {
 																																							 onClick={() => this.setMember(member)}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name} style={{borderRadius: '100%'}}/>
+												<Image src={member.image} alt={member.name} style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
 											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
@@ -174,7 +179,7 @@ class About extends Component {
 																																							 onClick={() => this.setMember(member)}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name} style={{borderRadius: '100%'}}/>
+												<Image src={member.image} alt={member.name} style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
 											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
@@ -191,7 +196,7 @@ class About extends Component {
 																											onClick={() => this.setMember(member)}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name} style={{borderRadius: '100%'}}/>
+												<Image src={member.image} alt={member.name} style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
 											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>

@@ -3,6 +3,10 @@ import {Toolbar} from "@material-ui/core";
 import {Container, Row} from "react-bootstrap";
 
 class Home extends Component {
+	componentDidMount() {
+		document.title = 'Home - The Niche Fashion Community'
+	}
+
 	render() {
 		return (
 			<React.Fragment>

@@ -15,6 +15,10 @@ class Gallery extends Component {
 		this.onImgLoad = this.onImgLoad.bind(this)
 	}
 
+	componentDidMount() {
+		document.title = 'Gallery - The Niche Fashion Community'
+	}
+
 	onImgLoad({target: img}) {
 		const h = img.offsetHeight
 		const w = img.offsetWidth
@@ -31,8 +35,26 @@ class Gallery extends Component {
 					<Row className='p-5'/>
 				</Container>
 				<Toolbar>
-					<Container>
+					<Container className='mb-5'>
 						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>Gallery</p>
+						<Accordion defaultExpanded>
+							<AccordionSummary
+								expandIcon={<ExpandMore/>}
+								aria-controls="panel1a-content"
+								id="panel1a-header"
+							>
+								<Typography style={{fontFamily: 'Montserrat', fontWeight: 600}}>Old Issue</Typography>
+							</AccordionSummary>
+							<AccordionDetails>
+								<Container fluid>
+									<HTMLFlipBook size='stretch' width={1283} height={1797}>
+										{images.map((image, i) =>
+											<Image key={i+1} src={image} style={{width: '100%'}}/>
+										)}
+									</HTMLFlipBook>
+								</Container>
+							</AccordionDetails>
+						</Accordion>
 						<Accordion>
 							<AccordionSummary
 								expandIcon={<ExpandMore/>}
@@ -62,24 +84,6 @@ class Gallery extends Component {
 											</Paper>
 										</Col> : null}
 									</Row>)}
-								</Container>
-							</AccordionDetails>
-						</Accordion>
-						<Accordion>
-							<AccordionSummary
-								expandIcon={<ExpandMore/>}
-								aria-controls="panel1a-content"
-								id="panel1a-header"
-							>
-								<Typography style={{fontFamily: 'Montserrat', fontWeight: 600}}>Old Issue</Typography>
-							</AccordionSummary>
-							<AccordionDetails>
-								<Container fluid>
-									<HTMLFlipBook size='stretch' width={1283} height={1797}>
-										{images.map((image, i) =>
-											<Image key={i+1} src={image} style={{width: '100%'}}/>
-										)}
-									</HTMLFlipBook>
 								</Container>
 							</AccordionDetails>
 						</Accordion>

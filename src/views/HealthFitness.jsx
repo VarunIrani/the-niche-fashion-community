@@ -8,6 +8,9 @@ import mickey1 from "../assets/img/health-fitness/1.jpg";
 import {qna} from "../content/health-fitness";
 
 class HealthFitness extends Component {
+	componentDidMount() {
+		document.title = 'Health & Fitness - The Niche Fashion Community'
+	}
 	render() {
 		return (
 			<React.Fragment>
