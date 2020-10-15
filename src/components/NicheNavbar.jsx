@@ -28,7 +28,7 @@ class NicheNavbar extends Component {
 											<Link to={route.path} key={index} style={{
 												fontFamily: 'Poppins',
 												fontWeight: 600,
-												fontSize: 14,
+												fontSize: 16,
 												textDecoration: 'inherit',
 												color: 'inherit'
 											}} className='my-auto mr-4'>

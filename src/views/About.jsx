@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {AppBar, Box, IconButton, Paper, Tab, Tabs, Toolbar} from "@material-ui/core";
-import {Container, Row, Col, ResponsiveEmbed, Image, Modal} from "react-bootstrap";
+import {Container, Row, Col, ResponsiveEmbed, Image, Modal, Carousel} from "react-bootstrap";
 import COLORS from "../colors";
 import {prTeam, team} from "../content/team";
-import {Close} from '@material-ui/icons';
+import {ChevronLeft, ChevronRight, Close} from '@material-ui/icons';
 import aboutImage from '../assets/img/about/profile-success.jpg';
+import {homeImages} from "../content/home";
 
 
 function TabPanel(props) {
@@ -45,7 +46,7 @@ class About extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'About - The Niche Fashion Community'
+		document.title = 'Home - The Niche Fashion Community'
 	}
 
 	showModal(modalShow) {
@@ -89,11 +90,12 @@ class About extends Component {
 										</Row>
 									</Col>
 								</Row>
-								{this.state.member.contact.map((detail, index) => <Row className='justify-content-center text-center' key={index}>
+								{this.state.member.contact.map((detail, index) => <Row className='justify-content-center text-center'
+																																			 key={index}>
 									<p>{detail.icon} {detail.text}</p>
 								</Row>)}
 								{this.state.member.content.map((c, index) => <Row key={index} className='mx-5 text-justify'>
-									<p style={{fontFamily:'Poppins'}}>{c}</p>
+									<p style={{fontFamily: 'Poppins'}}>{c}</p>
 								</Row>)}
 							</Container>
 						</Modal.Body>
@@ -103,7 +105,22 @@ class About extends Component {
 				</Container>
 				<Toolbar>
 					<Container className='mb-5'>
-						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>About The Niche</p>
+						<Paper elevation={3} style={{borderRadius: 10, backgroundColor: '#000'}}
+									 className='mb-5'>
+							<Carousel interval={2000} style={{borderRadius: 10}} nextIcon={<ChevronRight fontSize='large'/>}
+												prevIcon={<ChevronLeft fontSize='large'/>}>
+								{homeImages.map((image, index) =>
+									<Carousel.Item key={index}>
+										<Container fluid>
+											<Row className='justify-content-center'>
+												<Image src={image} style={{maxHeight: '75vh'}}/>
+											</Row>
+										</Container>
+									</Carousel.Item>
+								)}
+							</Carousel>
+						</Paper>
+						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>Home</p>
 						<Row className='mb-5 align-items-center'>
 							<Col xl={4}>
 								<Paper elevation={3} style={{borderRadius: 10}}>
@@ -115,17 +132,20 @@ class About extends Component {
 									<h3 style={{fontFamily: 'Poppins', color: 'white'}}>The Niche Fashion Arena International</h3>
 								</Row>
 								<Row className='justify-content-center'>
-									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold', color: '#ffce66'}}>A Profile with a Big Success</h5>
+									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold', color: '#ffce66'}}>A Profile with a Big
+										Success</h5>
 								</Row>
 								<Row className='text-justify mt-2 px-5'>
-									<p style={{fontFamily: 'Poppins', fontWeight: 'bold',color: 'white'}}>With its unique concept, the magazine is
+									<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: 'white'}}>With its unique concept, the
+										magazine is
 										committed to provide a
 										platform for the fashion community exclusively —Be it a Fashion or Interior Designer, Fashion Model,
 										Fashion Blogger, Fashion stylist, Fashion Choreographer, Makeover Stylist, Fashion Photographer or a
 										videographer, Accessories Merchandiser, Boutique Owner or Designer's Label Owner.</p>
 								</Row>
 								<Row className='text-justify mt-2 px-5'>
-									<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: 'white'}}>Online advertisers have opted to have their
+									<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: 'white'}}>Online advertisers have opted
+										to have their
 										presence in the
 										magazine THE NICHE Fashion Arena International and reach out to the decision makers of fashion
 										community across India. Your full page in color in the magazine and a virtual online imagery of the
@@ -166,7 +186,8 @@ class About extends Component {
 																																							 onClick={() => this.setMember(member)}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name} style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
+												<Image src={member.image} alt={member.name}
+															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
 											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
@@ -179,7 +200,8 @@ class About extends Component {
 																																							 onClick={() => this.setMember(member)}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name} style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
+												<Image src={member.image} alt={member.name}
+															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
 											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
@@ -196,7 +218,8 @@ class About extends Component {
 																											onClick={() => this.setMember(member)}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name} style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
+												<Image src={member.image} alt={member.name}
+															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
 											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
 											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>

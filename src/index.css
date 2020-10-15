@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.carousel-indicators li {
+  border-radius: 100%;
+  width: 0.5em !important;
+  height: 0.5em !important;
+}
