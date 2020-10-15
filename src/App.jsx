@@ -11,7 +11,7 @@ class App extends Component {
 				prop.path === '/' ? (
 					<Route exact path={prop.path} key={key} component={prop.component}/>
 				) : (
-					<Route path={prop.path} key={key} component={prop.component}/>
+					<Route path={prop.path} key={key} component={prop.component} id={key}/>
 				)
 		);
 	}

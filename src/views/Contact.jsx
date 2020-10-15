@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Toolbar, Paper} from "@material-ui/core";
 import {Container, Row, Col, ResponsiveEmbed, Image} from "react-bootstrap";
 import {team} from "../content/team";
-import COLORS from "../colors";
 import {Email, Phone} from "@material-ui/icons";
 
 class Contact extends Component {
@@ -23,6 +22,7 @@ class Contact extends Component {
 							<Col xs={7}>
 								<Paper elevation={3} style={{borderRadius: 10}}>
 									<iframe
+										title='maps'
 										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d945.8154452120979!2d73.87671822918232!3d18.51706869921321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0458a9015fd%3A0x81a6469dfa52c5aa!2sDastur%20Meher%20Rd%2C%20Pune%2C%20Maharashtra%20411001!5e0!3m2!1sen!2sin!4v1602430960263!5m2!1sen!2sin"
 										frameBorder="0" style={{borderRadius: 10, width: '100%', height: '60vh'}} allowFullScreen=""
 										aria-hidden="false"
@@ -54,7 +54,7 @@ class Contact extends Component {
 										</Row>
 									</Col>
 								</Row>
-								<Row>
+								<Row className='px-3'>
 									<p style={{
 										fontFamily: 'Poppins',
 										fontWeight: 600,
@@ -71,7 +71,7 @@ class Contact extends Component {
 										Pune 411 001
 									</p>
 								</Row>
-								<Row>
+								<Row className='px-3'>
 									<Email style={{color: '#ffce66'}} className='mr-3'/>
 									<p style={{
 										fontFamily: 'Poppins',
@@ -82,7 +82,7 @@ class Contact extends Component {
 										{team[0].contact[0].text}
 									</p>
 								</Row>
-								<Row>
+								<Row className='px-3'>
 									<Phone style={{color: '#ffce66'}} className='mr-3'/>
 									<p style={{
 										fontFamily: 'Poppins',

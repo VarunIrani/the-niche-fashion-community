@@ -1,4 +1,4 @@
-import Home from "./views/Home";
+// import Home from "./views/Home";
 import ExclusiveReads from "./views/ExclusiveReads";
 import Fashion from "./views/Fashion";
 import HealthFitness from "./views/HealthFitness";
@@ -8,10 +8,15 @@ import Gallery from "./views/Gallery";
 import Contact from "./views/Contact";
 
 const ROUTES = [
+	// {
+	// 	name: "HOME",
+	// 	path: '/',
+	// 	component: Home,
+	// },
 	{
 		name: "HOME",
 		path: '/',
-		component: Home,
+		component: About,
 	},
 	{
 		name: "EXCLUSIVE READS",
@@ -27,11 +32,6 @@ const ROUTES = [
 		name: "HEALTH & FITNESS",
 		path: '/health',
 		component: HealthFitness,
-	},
-	{
-		name: "ABOUT THE NICHE",
-		path: '/about',
-		component: About,
 	},
 	{
 		name: "THE NICHE FOCAL",

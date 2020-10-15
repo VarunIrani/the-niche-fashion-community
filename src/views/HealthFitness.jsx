@@ -170,7 +170,7 @@ class HealthFitness extends Component {
 													</Paper>
 												</Col>
 												<Col>
-													{e.qna.map((q, index) => <React.Fragment>
+													{e.qna.map((q, index) => <React.Fragment key={index}>
 														<Row className={`text-justify px-5 ${index === 0 ? 'mt-5' : ''}`}>
 															<p style={{fontFamily: 'Poppins', color: COLORS.primary}}><b>Q - {q.question}</b></p>
 														</Row>
@@ -181,7 +181,7 @@ class HealthFitness extends Component {
 												</Col>
 											</React.Fragment> : <React.Fragment>
 												<Col>
-													{e.qna.map((q, index) => <React.Fragment>
+													{e.qna.map((q, index) => <React.Fragment key={index}>
 														<Row className='text-justify px-5'>
 															<p style={{fontFamily: 'Poppins', color: COLORS.primary}}><b>Q - {q.question}</b></p>
 														</Row>

@@ -10,7 +10,7 @@ class NicheNavbar extends Component {
 	render() {
 		return (
 			<div style={{flexGrow: 1}}>
-				<AppBar color='inherit' elevation={2} >
+				<AppBar color='inherit' elevation={2}>
 					<Toolbar className='align-items-start flex-column p-0'>
 						<Container fluid>
 							<Row style={{backgroundColor: COLORS.primary}} className='p-1'/>
@@ -18,7 +18,9 @@ class NicheNavbar extends Component {
 						<Container className='my-3'>
 							<Row className='align-items-center justify-content-center'>
 								<Col xl='2' md='3' lg='2'>
-									<Image src={logo} style={{width: '100%'}}/>
+									<Link to='/'>
+										<Image src={logo} style={{width: '100%'}}/>
+									</Link>
 								</Col>
 								<Col>
 									<Row className='justify-content-end'>

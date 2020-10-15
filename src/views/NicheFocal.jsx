@@ -85,8 +85,8 @@ class NicheFocal extends Component {
 						<TabPanel value={this.state.value} index={0} style={{backgroundColor: 'white'}}
 											className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
-								{india.map((value, index) => <React.Fragment>
-										<Row key={index}>
+								{india.map((value, index) => <React.Fragment  key={index}>
+										<Row>
 											<p style={{
 												fontFamily: 'Poppins',
 												fontSize: 18,
