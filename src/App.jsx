@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Toolbar} from "@material-ui/core";
-import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import {Route, Switch, HashRouter as Router} from 'react-router-dom';
 import ROUTES from "./routes";
 import NicheNavbar from "./components/NicheNavbar";
 
