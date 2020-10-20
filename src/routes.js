@@ -1,50 +1,62 @@
-// import Home from "./views/Home";
 import ExclusiveReads from "./views/ExclusiveReads";
 import Fashion from "./views/Fashion";
 import HealthFitness from "./views/HealthFitness";
-import About from "./views/About";
+import Home from "./views/Home";
 import NicheFocal from "./views/NicheFocal";
 import Gallery from "./views/Gallery";
 import Contact from "./views/Contact";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faVestPatches, faHeartbeat, faImages} from '@fortawesome/free-solid-svg-icons'
+
+import {
+	ContactSupportRounded,
+	HomeRounded,
+	ImportContactsRounded,
+	MonochromePhotosRounded
+} from "@material-ui/icons";
+
+import React from 'react';
 
 const ROUTES = [
-	// {
-	// 	name: "HOME",
-	// 	path: '/',
-	// 	component: Home,
-	// },
 	{
-		name: "HOME",
+		icon: <HomeRounded/>,
+		name: "Home",
 		path: '/',
-		component: About,
+		component: Home,
 	},
 	{
-		name: "EXCLUSIVE READS",
+		icon: <ImportContactsRounded/>,
+		name: "Exclusive Reads",
 		path: '/exclusive',
 		component: ExclusiveReads,
 	},
 	{
-		name: "FASHION",
+		icon: <FontAwesomeIcon icon={faVestPatches} style={{fontSize: 22}}/>,
+		name: "Fashion",
 		path: '/fashion',
 		component: Fashion,
 	},
 	{
-		name: "HEALTH & FITNESS",
+		icon: <FontAwesomeIcon icon={faHeartbeat} style={{fontSize: 22}}/>,
+		name: "Health & Fitness",
 		path: '/health',
 		component: HealthFitness,
 	},
 	{
-		name: "THE NICHE FOCAL",
+		icon: <MonochromePhotosRounded/>,
+		name: "The Niche Focal",
 		path: '/focal',
 		component: NicheFocal,
 	},
 	{
-		name: "GALLERY",
+		icon: <FontAwesomeIcon icon={faImages} style={{fontSize: 22}}/>,
+		name: "Gallery",
 		path: '/gallery',
 		component: Gallery,
 	},
 	{
-		name: "CONTACT",
+		icon: <ContactSupportRounded/>,
+		name: "Contact",
 		path: '/contact',
 		component: Contact,
 	},

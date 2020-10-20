@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import {Accordion, AccordionSummary, Paper, Toolbar, Typography, AccordionDetails} from "@material-ui/core";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import {Accordion, AccordionSummary, Paper, Toolbar, Typography, AccordionDetails, IconButton} from "@material-ui/core";
+import {Col, Container, Image, Modal, ResponsiveEmbed, Row} from "react-bootstrap";
 import {horizontalImages, verticalImages} from "../content/gallery";
-import {ExpandMore} from "@material-ui/icons";
+import {Close, ExpandMore} from "@material-ui/icons";
 import {images} from '../content/old-issue';
 import HTMLFlipBook from "react-pageflip/src/pageflip";
+import COLORS from "../colors";
 
 class Gallery extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			colSize: 4
+			colSize: 4,
+			image: null,
+			modalShow: false
 		}
 		this.onImgLoad = this.onImgLoad.bind(this)
 	}
@@ -28,9 +31,34 @@ class Gallery extends Component {
 			this.setState({colSize: 6})
 	}
 
+	showModal(modalShow) {
+		this.setState({modalShow})
+	}
+
 	render() {
 		return (
 			<React.Fragment>
+				{this.state.image ?
+					<Modal size='xl' aria-labelledby="contained-modal-title-vcenter" show={this.state.modalShow}
+								 onHide={() => this.showModal(false)} style={{zIndex: 9999}} centered>
+						<Modal.Body>
+							<Container fluid>
+								<Row className='justify-content-end px-3 px-sm-0'>
+									<Col xs={1}>
+										<IconButton aria-label='close' onClick={() => this.showModal(false)}>
+											<Close style={{color: COLORS.primary}}/>
+										</IconButton>
+									</Col>
+								</Row>
+								<Row className='p-0'>
+									<Col className='p-0'>
+										{this.state.image}
+									</Col>
+								</Row>
+							</Container>
+						</Modal.Body>
+					</Modal>
+					: null}
 				<Container fluid>
 					<Row className='p-5'/>
 				</Container>
@@ -49,7 +77,7 @@ class Gallery extends Component {
 								<Container fluid>
 									<HTMLFlipBook size='stretch' width={1283} height={1797}>
 										{images.map((image, i) =>
-											<Image key={i+1} src={image} style={{width: '100%'}}/>
+											<Image key={i + 1} src={image} style={{width: '100%'}}/>
 										)}
 									</HTMLFlipBook>
 								</Container>
@@ -65,20 +93,32 @@ class Gallery extends Component {
 							</AccordionSummary>
 							<AccordionDetails>
 								<Container fluid>
-									{horizontalImages.map((image, i) => <Row key={i} className='mb-5'>
-										<Col xs={12}>
+									{horizontalImages.map((image, i) => <Row key={i} className='mb-5 p-0'>
+										<Col className='p-0' xs={12} onClick={() => {
+											this.setState({image}, () => {
+												this.showModal(true)
+											})
+										}}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												{image}
 											</Paper>
 										</Col>
 									</Row>)}
-									{verticalImages.leftVertical.map((image, i) => <Row key={i} className='mb-5'>
-										{verticalImages.leftVertical[i] ? <Col xs={6}>
+									{verticalImages.leftVertical.map((image, i) => <Row key={i} className='mb-5 p-0'>
+										{verticalImages.leftVertical[i] ? <Col xs={12} sm={6} className='mb-5 mb-sm-0 p-0' onClick={() => {
+											this.setState({image: verticalImages.leftVertical[i]}, () => {
+												this.showModal(true)
+											})
+										}}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												{verticalImages.leftVertical[i]}
 											</Paper>
 										</Col> : null}
-										{verticalImages.rightVertical[i] ? <Col xs={6}>
+										{verticalImages.rightVertical[i] ? <Col className='p-0' xs={12} sm={6} onClick={() => {
+											this.setState({image: verticalImages.rightVertical[i]}, () => {
+												this.showModal(true)
+											})
+										}}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												{verticalImages.rightVertical[i]}
 											</Paper>

@@ -33,14 +33,14 @@ class HealthFitness extends Component {
 							</AccordionSummary>
 							<AccordionDetails>
 								<Container fluid>
-									<Row>
-										<Col xs={4}>
+									<Row className='align-items-center'>
+										<Col xs={12} md={6} lg={4}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image style={{width: '100%', borderRadius: 10}} src={mickey0}/>
 											</Paper>
 										</Col>
-										<Col>
-											<Row className='text-justify px-5'>
+										<Col className='mt-3 mt-md-0'>
+											<Row className='text-justify px-2 px-md-2'>
 												<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>M</b>ickey Mehta is an Indian
 													leading holistic health guru, author, life coach. He is known for his fitness advice on
 													physical wellness. He bought in his own signature style which he calls it as yoga workouts
@@ -51,7 +51,7 @@ class HealthFitness extends Component {
 													to make the time and planning perfect for all those stuck in their home for a very long
 													lockdown. Mickey Mehta hits up a live Facebook show.</p>
 											</Row>
-											<Row className='text-justify mt-2 px-5'>
+											<Row className='text-justify mt-2 px-2 px-md-2'>
 												<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>P</b>romoting good health he began
 													to talk about what all should eat in this lockdown which will add on to glow and sparkle in
 													our body. So for all those who want wellness in their daily life, you need to start watching
@@ -60,7 +60,7 @@ class HealthFitness extends Component {
 											</Row>
 										</Col>
 									</Row>
-									<Row className='text-justify mt-2 px-5'>
+									<Row className='text-justify mt-2 px-2 px-md-2'>
 										<p style={{fontFamily: 'Poppins'}}>
 											That totally depends on how you look at it. Connecting it with the old song of Dimple Kapadia
 											and Rishi Kapoor, "Hum turn ek kamre me bandh ho our chabhi kho Jaye. He says - the key you
@@ -72,9 +72,9 @@ class HealthFitness extends Component {
 											before.
 										</p>
 									</Row>
-									<Row className='my-5'>
+									<Row className='my-2 my-md-2 align-items-center'>
 										<Col>
-											<Row className='text-justify px-5'>
+											<Row className='text-justify px-2 px-md-2'>
 												<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>M</b>ickey believes that champions
 													are born out of challenges. So this lockdown is a challenge that could be used to transform
 													ourselves into a hard metal that will shine forever. He then himself puts up a question — "Are
@@ -85,7 +85,7 @@ class HealthFitness extends Component {
 													stop consuming junk. Whether that junk is on TV, on web series, in daily soap operas, or junk
 													in the food. So stop being junkies and stop collecting junk from around. </p>
 											</Row>
-											<Row className='text-justify mt-2 px-5'>
+											<Row className='text-justify mt-2 px-2 px-md-2'>
 												<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>H</b>e further says - We are in
 													suspended animation condition right now. Most of us are alive but are not throbbing with life.
 													One should have infinite invisible energy immunity so as to throb with your life. Good
@@ -98,7 +98,7 @@ class HealthFitness extends Component {
 													your way.
 												</p>
 											</Row>
-											<Row className='text-center justify-content-center px-5'>
+											<Row className='text-center justify-content-center px-2 px-md-2'>
 												<p style={{
 													fontFamily: 'Poppins',
 													fontWeight: 'bold',
@@ -109,7 +109,7 @@ class HealthFitness extends Component {
 													cleansers. So eat them as much.
 												</p>
 											</Row>
-											<Row className='text-center justify-content-center px-5'>
+											<Row className='text-center justify-content-center px-2 px-md-2'>
 												<p style={{
 													fontFamily: 'Poppins',
 													fontWeight: 'bold',
@@ -117,7 +117,7 @@ class HealthFitness extends Component {
 												}}>Always Remember - Be optimistic, Be positive, Be full of energy to beat any disease.
 												</p>
 											</Row>
-											<Row className='text-justify mt-2 px-5'>
+											<Row className='text-justify mt-2 px-2 px-md-2'>
 												<p style={{fontFamily: 'Poppins'}}>He talks about how peaceful your day can be. We just have to
 													be more observant to observe the nature around, listen to the chirping of birds, sounds of
 													crinkling leaves, feel the air around which will ultimately make you more positive. He moves
@@ -125,7 +125,7 @@ class HealthFitness extends Component {
 													his followers.
 												</p>
 											</Row>
-											<Row className='px-5'>
+											<Row className='px-2 px-md-2'>
 												<p style={{
 													fontFamily: 'Poppins',
 													fontWeight: 'bold',
@@ -133,7 +133,7 @@ class HealthFitness extends Component {
 												}}>Compiled live from Mickeys' Interview with his fans on FACEBOOK by,
 												</p>
 											</Row>
-											<Row className='px-5'>
+											<Row className='px-2 px-md-2'>
 												<p style={{
 													fontFamily: 'Poppins',
 													fontWeight: 'bold',
@@ -142,7 +142,7 @@ class HealthFitness extends Component {
 												</p>
 											</Row>
 										</Col>
-										<Col xs={3}>
+										<Col xs={12} md={4} lg={3}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image style={{width: '100%', borderRadius: 10}} src={mickey1}/>
 											</Paper>
@@ -162,19 +162,19 @@ class HealthFitness extends Component {
 							<AccordionDetails>
 								<Container fluid>
 									{qna.map((e, index) =>
-										<Row key={index} className='my-5'>
+										<Row key={index} className='my-2 my-md-2 align-items-center'>
 											{index % 2 === 0 ? <React.Fragment>
-												<Col xs={index === 0 ? 12 : 5}>
+												<Col xs={12} md={index === 0 ? 12 : 6} lg={index === 0 ? 12 : 5}>
 													<Paper elevation={3} style={{borderRadius: 10}}>
 														<Image style={{width: '100%', borderRadius: 10}} src={e.image}/>
 													</Paper>
 												</Col>
 												<Col>
 													{e.qna.map((q, index) => <React.Fragment key={index}>
-														<Row className={`text-justify px-5 ${index === 0 ? 'mt-5' : ''}`}>
+														<Row className={`text-justify px-2 px-md-2 ${index === 0 ? 'mt-5' : ''}`}>
 															<p style={{fontFamily: 'Poppins', color: COLORS.primary}}><b>Q - {q.question}</b></p>
 														</Row>
-														<Row className='text-justify px-5'>
+														<Row className='text-justify px-2 px-md-2'>
 															<p style={{fontFamily: 'Poppins'}}><b>A - </b>{q.answer}</p>
 														</Row>
 													</React.Fragment>)}
@@ -182,22 +182,22 @@ class HealthFitness extends Component {
 											</React.Fragment> : <React.Fragment>
 												<Col>
 													{e.qna.map((q, index) => <React.Fragment key={index}>
-														<Row className='text-justify px-5'>
+														<Row className='text-justify px-2 px-md-2'>
 															<p style={{fontFamily: 'Poppins', color: COLORS.primary}}><b>Q - {q.question}</b></p>
 														</Row>
-														<Row className='text-justify px-5'>
+														<Row className='text-justify px-2 px-md-2'>
 															<p style={{fontFamily: 'Poppins'}}><b>A - </b>{q.answer}</p>
 														</Row>
 													</React.Fragment>)}
 												</Col>
-												<Col xs={5}>
+												<Col xs={12} md={6} lg={5}>
 													<Paper elevation={3} style={{borderRadius: 10}}>
 														<Image style={{width: '100%', borderRadius: 10}} src={e.image}/>
 													</Paper>
 												</Col>
 											</React.Fragment>}
 										</Row>)}
-									<Row className='text-justify px-4 my-5'>
+									<Row className='text-justify px-2 px-md-2 my-5'>
 										<Col>
 											<p style={{fontFamily: 'Poppins'}}>In the end, he says not to forget there are two important days in human lives: 1st - when we are
 												born and 2nd - when we realise why? So let's realise the purpose to live. • Sleep every night

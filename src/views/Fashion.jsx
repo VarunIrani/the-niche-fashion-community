@@ -81,13 +81,13 @@ class Fashion extends Component {
 						</AppBar>
 						<TabPanel value={this.state.value} index={0} style={{backgroundColor: 'white'}} className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
-								<Row>
-									<Col xs={4}>
+								<Row className='align-items-start align-items-md-center align-items-lg-start'>
+									<Col xs={12} md={5}>
 										<Paper elevation={3} style={{borderRadius: 10}}>
 											<Image style={{width: '100%', borderRadius: 10}} src={fashionBlogger}/>
 										</Paper>
 									</Col>
-									<Col>
+									<Col className='mt-3 mt-sm-0 text-center'>
 										<Row className='justify-content-center'>
 											<h5 style={{fontStyle: 'italic', fontFamily: 'Poppins'}}>From our Fashion Blogger</h5>
 										</Row>
@@ -100,7 +100,7 @@ class Fashion extends Component {
 										<Row className='justify-content-center'>
 											<p style={{fontFamily: 'Poppins'}}>by, The Gulabi Girl</p>
 										</Row>
-										<Row className='text-justify mt-2 px-5'>
+										<Row className='text-justify mt-2 px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>W</b>omen are always up for trying the latest
 												trend that is going on in Fashion. They have
 												endless possibilities that they can
@@ -108,7 +108,7 @@ class Fashion extends Component {
 												elegantly by blending traditional and western
 												world styles.</p>
 										</Row>
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>W</b>hen we are talking about fashion fusion of
 												traditional and western, how can we forget to
 												talk about Indo-western outfits for weddings,
@@ -117,13 +117,13 @@ class Fashion extends Component {
 												unique in a crowd? I recommend following
 												options :</p>
 										</Row>
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: COLORS.secondary}}>
 												1. Designer Blouse with a skirt and Denim
 												Jacket :
 											</p>
 										</Row>
-										<Row className='text-justify mt-0 pt-0 px-5'>
+										<Row className='text-justify mt-0 pt-0 px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}>
 												Style yourself in a fitted saree blouse and
 												drape a plain colour skirt in the bottom and
@@ -133,13 +133,13 @@ class Fashion extends Component {
 											</p>
 										</Row>
 
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: COLORS.secondary}}>
 												2. Saree blouse with black jeans and a
 												white jacket :
 											</p>
 										</Row>
-										<Row className='text-justify mt-0 pt-0 px-5'>
+										<Row className='text-justify mt-0 pt-0 px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}>
 												In order to style yourself in the latest trends
 												wear a classic traditional blouse, pick a pair of
@@ -150,12 +150,12 @@ class Fashion extends Component {
 											</p>
 										</Row>
 
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: COLORS.secondary}}>
 												3. Sleeveless blouse with a black skirt:
 											</p>
 										</Row>
-										<Row className='text-justify mt-0 pt-0 px-5'>
+										<Row className='text-justify mt-0 pt-0 px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}>
 												To get an Indo-western attire, wear a light-
 												coloured blouse and pair it up with a black
@@ -163,7 +163,7 @@ class Fashion extends Component {
 												plain black jacket.
 											</p>
 										</Row>
-										<Row className='text-justify mt-2 px-5'>
+										<Row className='text-justify mt-2 px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins', fontWeight: 'bold'}}>
 												The Gulabi Girl<br/> ( Pranjal Saklecha )
 											</p>
@@ -174,30 +174,30 @@ class Fashion extends Component {
 						</TabPanel>
 						<TabPanel value={this.state.value} index={1} style={{backgroundColor: 'white'}} className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
-								<Row>
-									<Col xs={4}>
+								<Row className='align-items-start align-items-md-center align-items-lg-start'>
+									<Col xs={12} md={5}>
 										<Paper elevation={3} style={{borderRadius: 10}}>
 											<Image style={{width: '100%', borderRadius: 10}} src={fashionStylist}/>
 										</Paper>
 									</Col>
-									<Col>
+									<Col className='text-center mt-3 mt-md-0'>
 										<Row className='justify-content-center'>
 											<h5 style={{fontStyle: 'italic', fontFamily: 'Poppins'}}>From our Fashion Stylist</h5>
 										</Row>
 										<Row className='justify-content-center'>
 											<h3 style={{fontFamily: 'Poppins', fontWeight: 600, color: COLORS.primary}}>Pooja Shinde</h3>
 										</Row>
-										<Row className='text-justify mt-2 px-5'>
+										<Row className='text-justify mt-2 px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}><b>Fashion Stylist Pooja Shinde</b> is one of the leading voices within India's Fashion
 												Community. She can literally turn girls next door into a <b>high-octane glamour.</b></p>
 										</Row>
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>S</b>he integrates all aspects of a female's visual aesthetic to make her look as fashionable
 												and stylized as possible. Management between her clients' comfort and fabulous style look
 												is what makes her attract like queen bees. She co-ordinates with her clients style, adding
 												some dramatic charm to roast the look.</p>
 										</Row>
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}>
 												Her clients looks are just the reflection of her daily approach in styling <b>Clothing and
 												Accessorizing</b>. She also helps many models in finding their place in the fashion industry.
@@ -205,9 +205,9 @@ class Fashion extends Component {
 												comprehend that it needs practice to live a sensual lifestyle.
 											</p>
 										</Row>
-										<Row className='text-justify px-5'>
+										<Row className='text-justify px-2 px-md-2'>
 											<p style={{fontFamily: 'Poppins'}}><b style={{fontSize: 20}}>L</b>astly her message to entire fashion community, in other words live your life to
-												your fullest — <b style={{color: COLORS.secondary}}>" Year 2020-2021, Sensual Fashion. Youths' Passion. "</b></p>
+												your fullest — <b style={{color: COLORS.secondary}}>"Year 2020-2021, Sensual Fashion. Youths' Passion."</b></p>
 										</Row>
 									</Col>
 								</Row>

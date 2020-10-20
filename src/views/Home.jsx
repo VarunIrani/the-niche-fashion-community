@@ -34,7 +34,7 @@ function a11yProps(index) {
 	};
 }
 
-class About extends Component {
+class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -66,35 +66,40 @@ class About extends Component {
 		return (
 			<React.Fragment>
 				{this.state.member ?
-					<Modal size='lg' aria-labelledby="contained-modal-title-vcenter" show={this.state.modalShow}
+					<Modal size='xl' aria-labelledby="contained-modal-title-vcenter" show={this.state.modalShow}
 								 onHide={() => this.showModal(false)} style={{zIndex: 9999}}>
 						<Modal.Body>
 							<Container fluid>
-								<Row className='justify-content-end'>
+								<Row className='justify-content-end px-3 px-sm-0'>
 									<Col xs={1}>
 										<IconButton aria-label='close' onClick={() => this.showModal(false)}>
 											<Close style={{color: COLORS.primary}}/>
 										</IconButton>
 									</Col>
 								</Row>
-								<Row className='justify-content-center'>
-									<Col xs={3}>
+								<Row className='justify-content-center text-center'>
+									<Col xs={10} sm={3}>
 										<Row className='justify-content-center text-center'>
 											<ResponsiveEmbed aspectRatio='1by1'>
 												<Image src={this.state.member.image} alt={this.state.member.name}
 															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
 											</ResponsiveEmbed>
-											<p style={{fontFamily: 'Poppins', fontWeight: 600}}
-												 className='mt-2 p-0 m-0'>{this.state.member.name}</p>
-											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{this.state.member.description}</p>
 										</Row>
+									</Col>
+									<Col xs={12}>
+										<p style={{fontFamily: 'Poppins', fontWeight: 600, fontSize: 24}}
+											 className='mt-2 p-0 m-0'>{this.state.member.name}</p>
+									</Col>
+									<Col xs={12} className='mb-3'>
+										<p style={{fontFamily: 'Poppins', fontWeight: 600}}
+											 className='mt-2 p-0 m-0'>{this.state.member.description}</p>
 									</Col>
 								</Row>
 								{this.state.member.contact.map((detail, index) => <Row className='justify-content-center text-center'
 																																			 key={index}>
 									<p>{detail.icon} {detail.text}</p>
 								</Row>)}
-								{this.state.member.content.map((c, index) => <Row key={index} className='mx-5 text-justify'>
+								{this.state.member.content.map((c, index) => <Row key={index} className='mx-sm-3 text-justify'>
 									<p style={{fontFamily: 'Poppins'}}>{c}</p>
 								</Row>)}
 							</Container>
@@ -127,15 +132,15 @@ class About extends Component {
 									<Image src={aboutImage} alt='profile-with-success' style={{width: '100%', borderRadius: 10}}/>
 								</Paper>
 							</Col>
-							<Col>
-								<Row className='justify-content-center'>
+							<Col className='mt-3'>
+								<Row className='justify-content-center text-center'>
 									<h3 style={{fontFamily: 'Poppins', color: 'white'}}>The Niche Fashion Arena International</h3>
 								</Row>
 								<Row className='justify-content-center'>
 									<h5 style={{fontFamily: 'Poppins', fontWeight: 'bold', color: '#ffce66'}}>A Profile with a Big
 										Success</h5>
 								</Row>
-								<Row className='text-justify mt-2 px-5'>
+								<Row className='text-justify mt-2 px-sm-5 px-2'>
 									<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: 'white'}}>With its unique concept, the
 										magazine is
 										committed to provide a
@@ -143,7 +148,7 @@ class About extends Component {
 										Fashion Blogger, Fashion stylist, Fashion Choreographer, Makeover Stylist, Fashion Photographer or a
 										videographer, Accessories Merchandiser, Boutique Owner or Designer's Label Owner.</p>
 								</Row>
-								<Row className='text-justify mt-2 px-5'>
+								<Row className='text-justify mt-2 px-sm-5 px-2'>
 									<p style={{fontFamily: 'Poppins', fontWeight: 'bold', color: 'white'}}>Online advertisers have opted
 										to have their
 										presence in the
@@ -180,51 +185,74 @@ class About extends Component {
 						<TabPanel value={this.state.value} index={0} style={{backgroundColor: 'white'}}
 											className='MuiPaper-elevation3'>
 							<Container fluid>
-								<Row className='justify-content-around'>
-									{team.filter((e) => e.row === 1).map((member, index) => <Col xs={2} key={index}
-																																							 style={{cursor: 'pointer'}}
-																																							 onClick={() => this.setMember(member)}>
-										<Row className='justify-content-center text-center'>
-											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name}
-															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
-											</ResponsiveEmbed>
-											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
-											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
-										</Row>
-									</Col>)}
+								<Row className='justify-content-around text-center text-sm-left'>
+									{team.filter((e) => e.row === 1).map((member, index) =>
+										<Col xs={12} sm={12} md={6} lg={4} key={index}
+												 style={{cursor: 'pointer'}}
+												 onClick={() => this.setMember(member)}>
+											<Row className='justify-content-center text-center'>
+												<Col md={6} lg={8}>
+													<ResponsiveEmbed aspectRatio='1by1'>
+														<Image src={member.image} alt={member.name}
+																	 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
+													</ResponsiveEmbed>
+												</Col>
+												<Col className='mb-5'>
+													<p style={{fontFamily: 'Poppins', fontWeight: 600, fontSize: 22}}
+														 className='mt-2 p-0 m-0'>{member.name}</p>
+													<p style={{fontFamily: 'Poppins', fontWeight: 600}}
+														 className='mt-2 p-0 m-0'>{member.description}</p>
+												</Col>
+											</Row>
+										</Col>
+									)}
 								</Row>
-								<Row className='justify-content-around mt-5'>
-									{team.filter((e) => e.row === 2).map((member, index) => <Col xs={2} key={index}
-																																							 style={{cursor: 'pointer'}}
-																																							 onClick={() => this.setMember(member)}>
-										<Row className='justify-content-center text-center'>
-											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name}
-															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
-											</ResponsiveEmbed>
-											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
-											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
-										</Row>
-									</Col>)}
+								<Row className='justify-content-around mt-5 text-center text-sm-left'>
+									{team.filter((e) => e.row === 2).map((member, index) =>
+										<Col xs={12} sm={12} md={6} lg={4} key={index}
+												 style={{cursor: 'pointer'}}
+												 onClick={() => this.setMember(member)}>
+											<Row className='justify-content-center text-center'>
+												<Col md={6} lg={9}>
+													<ResponsiveEmbed aspectRatio='1by1'>
+														<Image src={member.image} alt={member.name}
+																	 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
+													</ResponsiveEmbed>
+												</Col>
+												<Col className='mb-5'>
+													<p style={{fontFamily: 'Poppins', fontWeight: 600, fontSize: 22}}
+														 className='mt-2 p-0 m-0'>{member.name}</p>
+													<p style={{fontFamily: 'Poppins', fontWeight: 600}}
+														 className='mt-2 p-0 m-0'>{member.description}</p>
+												</Col>
+											</Row>
+										</Col>)}
 								</Row>
 							</Container>
 						</TabPanel>
 						<TabPanel value={this.state.value} index={1} style={{backgroundColor: 'white'}}
 											className='MuiPaper-elevation3'>
 							<Container fluid>
-								<Row className='justify-content-around'>
-									{prTeam.map((member, index) => <Col xs={2} key={index} style={{cursor: 'pointer'}}
-																											onClick={() => this.setMember(member)}>
-										<Row className='justify-content-center text-center'>
-											<ResponsiveEmbed aspectRatio='1by1'>
-												<Image src={member.image} alt={member.name}
-															 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
-											</ResponsiveEmbed>
-											<p style={{fontFamily: 'Poppins', fontWeight: 600}} className='mt-2 p-0 m-0'>{member.name}</p>
-											<p style={{fontFamily: 'Poppins', fontSize: 14}}>{member.description}</p>
-										</Row>
-									</Col>)}
+								<Row className='justify-content-around text-center text-sm-left'>
+									{prTeam.map((member, index) =>
+										<Col xs={12} sm={12} md={6} lg={4} key={index}
+												 style={{cursor: 'pointer'}}
+												 onClick={() => this.setMember(member)}>
+											<Row className='justify-content-center text-center'>
+												<Col md={6} lg={8}>
+													<ResponsiveEmbed aspectRatio='1by1'>
+														<Image src={member.image} alt={member.name}
+																	 style={{borderRadius: '100%', border: '6px solid #111D5E'}}/>
+													</ResponsiveEmbed>
+												</Col>
+												<Col className='mb-5'>
+													<p style={{fontFamily: 'Poppins', fontWeight: 600, fontSize: 22}}
+														 className='mt-2 p-0 m-0'>{member.name}</p>
+													<p style={{fontFamily: 'Poppins', fontWeight: 600}}
+														 className='mt-2 p-0 m-0'>{member.description}</p>
+												</Col>
+											</Row>
+										</Col>)}
 								</Row>
 							</Container>
 						</TabPanel>
@@ -235,4 +263,4 @@ class About extends Component {
 	}
 }
 
-export default About;
+export default Home;

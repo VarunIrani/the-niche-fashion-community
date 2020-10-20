@@ -70,7 +70,7 @@ class ExclusiveRead extends Component {
 									<p style={{fontFamily: 'Montserrat', fontWeight: 600, fontSize: 18}}
 										 className='my-auto'>{article.title}</p>
 								</Col>
-								<Col xs={1}>
+								<Col xs={1} className='px-5 px-sm-0 px-md-0'>
 									<IconButton aria-label='close' onClick={() => this.showModal(false)}>
 										<Close style={{color: COLORS.primary}}/>
 									</IconButton>
@@ -78,18 +78,18 @@ class ExclusiveRead extends Component {
 							</Row>
 							{this.state.splitContent.length ?
 								this.state.splitContent.map((content, index) =>
-									<Row className='justify-content-center align-items-center mb-3' key={index}>
-										{index % 2 === 0 ? <Col xs={4}>
+									<Row className='justify-content-center align-items-center mb-3 mt-3' key={index}>
+										{index % 2 === 0 ? <Col xs={12} sm={12} lg={4}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image src={content.image} style={{width: '100%', borderRadius: 10}}/>
 											</Paper>
 										</Col> : null}
-										<Col className='px-5'>
+										<Col className='px-3 px-sm-3 mt-3 mt-sm-3'>
 											<Row className='text-justify'>
 												<p style={{fontFamily: 'Poppins', fontWeight: 500, fontSize: 16}}>{content.text}</p>
 											</Row>
 										</Col>
-										{index % 2 !== 0 ? <Col xs={4}>
+										{index % 2 !== 0 ? <Col xs={12} sm={12} lg={4}>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image src={content.image} style={{width: '100%', borderRadius: 10}}/>
 											</Paper>
@@ -98,14 +98,14 @@ class ExclusiveRead extends Component {
 								: null}
 							{this.state.extraImages ? <React.Fragment>
 									<Row className='justify-content-center mb-3'>
-										{this.state.extraImages.hImages.map((image, index) => <Col xs={4} key={index} className='mb-3'>
+										{this.state.extraImages.hImages.map((image, index) => <Col lg={4} sm={12} xs={12} key={index} className='mb-3'>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image src={image.src} style={{width: '100%', borderRadius: 10}}/>
 											</Paper>
 										</Col>)}
 									</Row>
 									<Row className='justify-content-center mb-3'>
-										{this.state.extraImages.vImages.map((image, index) => <Col xs={4} key={index} className='mb-3'>
+										{this.state.extraImages.vImages.map((image, index) => <Col lg={4} sm={12} xs={12} key={index} className='mb-3'>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image src={image.src} style={{width: '100%', borderRadius: 10}}/>
 											</Paper>
@@ -117,14 +117,14 @@ class ExclusiveRead extends Component {
 					</Modal.Body>
 				</Modal>
 
-				<Row className='mb-3'>
-					<Col xs={4}>
+				<Row className='mb-3 text-center text-sm-left'>
+					<Col sm={4} xs={12}>
 						<ResponsiveEmbed aspectRatio='1by1'>
 							<Image src={article.thumbnail}
 										 style={{width: '100%', borderRadius: 10}}/>
 						</ResponsiveEmbed>
 					</Col>
-					<Col>
+					<Col className='mt-3 mt-sm-0'>
 						<Row>
 							<p style={{
 								fontFamily: 'Poppins',
@@ -136,7 +136,7 @@ class ExclusiveRead extends Component {
 								.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
 								.join(' ')}</p>
 						</Row>
-						<Row>
+						<Row className='text-center text-sm-left'>
 							<p style={{
 								fontFamily: 'Poppins',
 								fontWeight: 500,
@@ -144,7 +144,7 @@ class ExclusiveRead extends Component {
 								color: 'white'
 							}}>{article.content.substring(0, 200)}...</p>
 						</Row>
-						<Row>
+						<Row className='justify-content-center justify-content-sm-start'>
 							<Button variant='contained' onClick={() => {
 								this.showModal(true)
 							}} style={{backgroundColor: '#ffce66'}}>

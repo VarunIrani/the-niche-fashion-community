@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {AppBar, Box, Paper, Tab, Tabs, Toolbar} from "@material-ui/core";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import {AppBar, Box, IconButton, Paper, Tab, Tabs, Toolbar} from "@material-ui/core";
+import {Col, Container, Image, Modal, Row} from "react-bootstrap";
 import COLORS from "../colors";
 
 import {india} from "../content/focal";
 import {international} from "../content/focal";
+import {Close} from "@material-ui/icons";
 
 function TabPanel(props) {
 	const {children, value, index, ...other} = props;
@@ -38,6 +39,8 @@ class NicheFocal extends Component {
 		super(props);
 		this.state = {
 			value: 0,
+			image: null,
+			modalShow: false
 		}
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -50,10 +53,34 @@ class NicheFocal extends Component {
 		document.title = 'The Niche Focal - The Niche Fashion Community'
 	}
 
-	render() {
+	showModal(modalShow) {
+		this.setState({modalShow})
+	}
 
+	render() {
 		return (
 			<React.Fragment>
+				{this.state.image ?
+					<Modal size='xl' aria-labelledby="contained-modal-title-vcenter" show={this.state.modalShow}
+								 onHide={() => this.showModal(false)} style={{zIndex: 9999}} centered>
+						<Modal.Body>
+							<Container fluid>
+								<Row className='justify-content-end px-3 px-sm-0'>
+									<Col xs={1}>
+										<IconButton aria-label='close' onClick={() => this.showModal(false)}>
+											<Close style={{color: COLORS.primary}}/>
+										</IconButton>
+									</Col>
+								</Row>
+								<Row className='p-0'>
+									<Col className='p-0'>
+										<Image style={{width: '100%', borderRadius: 10}} src={this.state.image}/>
+									</Col>
+								</Row>
+							</Container>
+						</Modal.Body>
+					</Modal>
+					: null}
 				<Container fluid>
 					<Row className='p-5'/>
 				</Container>
@@ -85,7 +112,7 @@ class NicheFocal extends Component {
 						<TabPanel value={this.state.value} index={0} style={{backgroundColor: 'white'}}
 											className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
-								{india.map((value, index) => <React.Fragment  key={index}>
+								{india.map((value, index) => <React.Fragment key={index}>
 										<Row>
 											<p style={{
 												fontFamily: 'Poppins',
@@ -94,15 +121,19 @@ class NicheFocal extends Component {
 												color: COLORS.primary
 											}}>{value.title}</p>
 										</Row>
-									{value.images.map((image, i) =>
-										<Row key={i} className='mb-3'>
-											<Col>
-												<Paper elevation={3} style={{borderRadius: 10}}>
-													<Image style={{width: '100%', borderRadius: 10}} src={image}/>
-												</Paper>
-											</Col>
-										</Row>
-									)}
+										{value.images.map((image, i) =>
+											<Row key={i} className='mb-3 p-0'>
+												<Col className='p-0' onClick={() => {
+													this.setState({image}, () => {
+														this.showModal(true)
+													})
+												}}>
+													<Paper elevation={3} style={{borderRadius: 10}}>
+														<Image style={{width: '100%', borderRadius: 10}} src={image}/>
+													</Paper>
+												</Col>
+											</Row>
+										)}
 									</React.Fragment>
 								)}
 							</Container>
@@ -111,8 +142,12 @@ class NicheFocal extends Component {
 											className='mb-5 MuiPaper-elevation3'>
 							<Container fluid>
 								{international.map((image, i) =>
-									<Row key={i} className='mb-3'>
-										<Col>
+									<Row key={i} className='mb-3 p-0' onClick={() => {
+										this.setState({image}, () => {
+											this.showModal(true)
+										})
+									}}>
+										<Col className='p-0'>
 											<Paper elevation={3} style={{borderRadius: 10}}>
 												<Image style={{width: '100%', borderRadius: 10}} src={image}/>
 											</Paper>

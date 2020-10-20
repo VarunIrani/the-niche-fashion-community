@@ -104,7 +104,12 @@ export const prTeam = [
 			'Aspiring Fashion Stylist perceived her designing studies from a reputed fashion institute in India. Ambika works on selective projects as a Freelance Fashion Stylist. With unique and thoughtful concepts and its execution for the same. With aim to spread her name all over the world amongst the Fashion Community.',
 			'Presently she has undertaken her second project for a global International fashion magazine called, THE NICHE Fashion Arena International published from India. Being excited with her exploitation with global print glossy, she has this message for the readers of global fashion community of this glossy magazine, "Be destined with fashion --- ONLY THE LATEST".'
 		],
-		contact: []
+		contact: [
+			{
+				icon: <Email style={{color: COLORS.primary}}/>,
+				text: 'ambikakanapanavar96@gmail.com '
+			}
+		]
 	},
 	{
 		image: dipali,
@@ -124,6 +129,11 @@ export const prTeam = [
 			'I also own a established Make over Brand, called, Maples Beauty Salon & SPA, which gave me opportunity to associate as Official Grooming and Make over Partner with the only Global International fashion magazine THE NICHE Fashion Arena International.',
 			'I am excited with this offer which has further more openings with NICHE Group. Grabbing this opportunity, I sincerely welcome our fashion community readers with my message to the readers of the magazine to patronize it by way of subscribing the same and preserve it in their collector\'s library.'
 		],
-		contact: []
+		contact: [
+			{
+				icon: <Email style={{color: COLORS.primary}}/>,
+				text: 'dips.khamar@gmail.com '
+			}
+		]
 	},
 ];

@@ -18,8 +18,8 @@ class Contact extends Component {
 				<Toolbar>
 					<Container className='mb-5'>
 						<p style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, color: 'white'}}>Contact Us</p>
-						<Row>
-							<Col xs={7}>
+						<Row className='align-items-center'>
+							<Col xs={12} sm={7} md={7}>
 								<Paper elevation={3} style={{borderRadius: 10}}>
 									<iframe
 										title='maps'
@@ -30,31 +30,31 @@ class Contact extends Component {
 									</iframe>
 								</Paper>
 							</Col>
-							<Col>
+							<Col className='mt-4 mt-sm-0'>
 								<Row className='mb-3'>
-									<Col xs={7}>
+									<Col xs={12} md={12} lg={7}>
 										<ResponsiveEmbed aspectRatio='1by1'>
 											<Image src={team[0].image} alt={team[0].name}
 														 style={{borderRadius: '100%', border: '6px solid #ffce66'}}/>
 										</ResponsiveEmbed>
 									</Col>
 									<Col className='my-auto'>
-										<Row className='justify-content-center'>
-											<Row>
+										<Row className='justify-content-center text-center text-md-center text-lg-left'>
+											<Col xs={12} md={12} className='mt-sm-0 mt-3 mt-md-3'>
 												<p style={{
 													fontFamily: 'Poppins',
 													fontWeight: 600,
 													color: '#ffce66',
 													fontSize: 24
 												}}>{team[0].name}</p>
-											</Row>
-											<Row>
+											</Col>
+											<Col xs={12} md={12}>
 												<p style={{fontFamily: 'Poppins', fontSize: 18, color: '#ffce66'}}>{team[0].description}</p>
-											</Row>
+											</Col>
 										</Row>
 									</Col>
 								</Row>
-								<Row className='px-3'>
+								<Row className='px-3 justify-content-center text-center justify-content-md-start text-md-left'>
 									<p style={{
 										fontFamily: 'Poppins',
 										fontWeight: 600,
@@ -71,7 +71,7 @@ class Contact extends Component {
 										Pune 411 001
 									</p>
 								</Row>
-								<Row className='px-3'>
+								<Row className='px-3 px-md-0 px-lg-3 justify-content-center justify-content-lg-start'>
 									<Email style={{color: '#ffce66'}} className='mr-3'/>
 									<p style={{
 										fontFamily: 'Poppins',
@@ -82,7 +82,7 @@ class Contact extends Component {
 										{team[0].contact[0].text}
 									</p>
 								</Row>
-								<Row className='px-3'>
+								<Row className='px-3 px-md-0 px-lg-3 justify-content-center justify-content-lg-start'>
 									<Phone style={{color: '#ffce66'}} className='mr-3'/>
 									<p style={{
 										fontFamily: 'Poppins',
