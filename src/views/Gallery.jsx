@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Accordion, AccordionSummary, Paper, Toolbar, Typography, AccordionDetails, IconButton} from "@material-ui/core";
-import {Col, Container, Image, Modal, ResponsiveEmbed, Row} from "react-bootstrap";
+import {Col, Container, Image, Modal, Row} from "react-bootstrap";
 import {horizontalImages, verticalImages} from "../content/gallery";
 import {Close, ExpandMore} from "@material-ui/icons";
 import {images} from '../content/old-issue';
