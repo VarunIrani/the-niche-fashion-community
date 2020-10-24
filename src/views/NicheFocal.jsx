@@ -3,8 +3,7 @@ import {AppBar, Box, IconButton, Paper, Tab, Tabs, Toolbar} from "@material-ui/c
 import {Col, Container, Image, Modal, Row} from "react-bootstrap";
 import COLORS from "../colors";
 
-import {india} from "../content/focal";
-import {international} from "../content/focal";
+import {getNicheFocal} from "../content/focal";
 import {Close} from "@material-ui/icons";
 
 function TabPanel(props) {
@@ -40,7 +39,9 @@ class NicheFocal extends Component {
 		this.state = {
 			value: 0,
 			image: null,
-			modalShow: false
+			modalShow: false,
+			india: [],
+			international: []
 		}
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -51,6 +52,9 @@ class NicheFocal extends Component {
 
 	componentDidMount() {
 		document.title = 'The Niche Focal - The Niche Fashion Community'
+		getNicheFocal().then(r => {
+			this.setState({india: r.india, international: r.international})
+		})
 	}
 
 	showModal(modalShow) {
@@ -58,6 +62,8 @@ class NicheFocal extends Component {
 	}
 
 	render() {
+		const india = this.state.india;
+		const international = this.state.international
 		return (
 			<React.Fragment>
 				{this.state.image ?

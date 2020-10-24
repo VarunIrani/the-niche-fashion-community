@@ -29,38 +29,41 @@ import i27 from '../assets/img/gallery/27.jpg'
 import i28 from '../assets/img/gallery/28.jpg'
 import i29 from '../assets/img/gallery/29.jpg'
 
-import React from 'react';
-import {Image} from "react-bootstrap";
+export const getGalleryImages = () => {
+	return new Promise(resolve => {
+		const images = [i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, i23, i24, i25, i26, i27, i28, i29];
 
-const images = [i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, i23, i24, i25, i26, i27, i28, i29];
+		let iTags = [];
 
-let iTags = [];
+		images.forEach((image, i) => {
+			const img = document.createElement('img')
+			img.src = image
+			iTags.push(img);
+		})
 
-images.forEach((image, i) => {
-	const img = document.createElement('img')
-	img.src = image
-	iTags.push(img);
-})
+		const hImages = iTags.filter((i) => i.width > i.height)
+		const vImages = iTags.filter((i) => i.width < i.height)
 
-const hImages = iTags.filter((i) => i.width > i.height)
-const vImages = iTags.filter((i) => i.width < i.height)
+		let hFinalImages = [];
+		let vFinalImages = [];
 
-let hFinalImages = [];
-let vFinalImages = [];
+		hImages.forEach((image) => {
+			hFinalImages.push(image.src)
+		})
 
-hImages.forEach((image) => {
-	hFinalImages.push(<Image style={{borderRadius: 10, width: '100%'}} src={image.src}/>)
-})
+		vImages.forEach((image) => {
+			vFinalImages.push(image.src)
+		})
 
-vImages.forEach((image) => {
-	vFinalImages.push(<Image style={{borderRadius: 10, width: '100%'}} src={image.src}/>)
-})
+		const leftVertical = vFinalImages.filter((v, i) => i % 2 === 0)
+		const rightVertical = vFinalImages.filter((v, i) => i % 2 !== 0)
 
-let leftVertical = vFinalImages.filter((v, i) => i % 2 === 0)
-let rightVertical = vFinalImages.filter((v, i) => i % 2 !== 0)
-
-export const horizontalImages = hFinalImages;
-export const verticalImages = {
-	leftVertical,
-	rightVertical
+		resolve({
+			horizontalImages: hFinalImages,
+			verticalImages: {
+				leftVertical,
+				rightVertical
+			}
+		});
+	})
 }

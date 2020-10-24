@@ -15,12 +15,19 @@ import inLS1 from '../assets/img/focal/india/life-style/1.jpg'
 import inter0 from '../assets/img/focal/international/0.jpg'
 import inter1 from '../assets/img/focal/international/1.jpg'
 
-export const india = [
-	{
-		images: [inCom0, inCom1, inCom2, inCom3, inCom4, inCom5, inCom6, inCom7, inCom8, inCom9],
-		title: 'Fashion Community'
-	},
-	{images: [inLS0, inLS1], title: 'Lifestyle Advertorial'}
-];
-
-export const international = [inter0, inter1]
+export const getNicheFocal = () => {
+	return new Promise(resolve => {
+		const india = [
+			{
+				images: [inCom0, inCom1, inCom2, inCom3, inCom4, inCom5, inCom6, inCom7, inCom8, inCom9],
+				title: 'Fashion Community'
+			},
+			{images: [inLS0, inLS1], title: 'Lifestyle Advertorial'}
+		];
+		const international = [inter0, inter1]
+		resolve({
+			india,
+			international
+		})
+	})
+}
