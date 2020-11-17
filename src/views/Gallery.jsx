@@ -1,11 +1,24 @@
 import React, {Component} from 'react';
-import {Accordion, AccordionSummary, Paper, Toolbar, Typography, AccordionDetails, IconButton} from "@material-ui/core";
+import {
+  Accordion,
+  AccordionSummary,
+  Paper,
+  Toolbar,
+  Typography,
+  AccordionDetails,
+  IconButton,
+  Hidden
+} from "@material-ui/core";
 import {Col, Container, Image, Modal, Row} from "react-bootstrap";
 import {getGalleryImages} from "../content/gallery";
 import {Close, ExpandMore} from "@material-ui/icons";
 import {images} from '../content/old-issue';
 import HTMLFlipBook from "react-pageflip/src/pageflip";
 import COLORS from "../colors";
+import FlipBook from "react-flip-page";
+
+let device = "";
+let bookHeight = "0vh";
 
 class Gallery extends Component {
   constructor(props) {
@@ -25,6 +38,26 @@ class Gallery extends Component {
     getGalleryImages().then(r => {
       this.setState({horizontalImages: r.horizontalImages, verticalImages: r.verticalImages})
     })
+    // console.log(FlipBook)
+    if (window.innerWidth <= 600)
+      device = "xs"
+    else if (window.innerWidth <= 768)
+      device = "md"
+    else if (window.innerWidth <= 992)
+      device = "lg"
+    else
+      device = "xl"
+
+    console.log(device)
+
+    if (device === "xs")
+      bookHeight = window.innerHeight * 0.6
+    else if (device === "md")
+      bookHeight = window.innerHeight * 0.9
+    else if (device === "lg")
+      bookHeight = window.innerHeight * 0.9
+    else if (device === "xl")
+      bookHeight = window.innerHeight
   }
 
   onImgLoad({target: img}) {
@@ -82,11 +115,25 @@ class Gallery extends Component {
               </AccordionSummary>
               <AccordionDetails>
                 <Container fluid>
-                  <HTMLFlipBook size='stretch' width={1283} height={1797}>
-                    {images.map((image, i) =>
-                      <Image key={i + 1} src={image} style={{width: '100%'}}/>
-                    )}
-                  </HTMLFlipBook>
+                  <Row className="justify-content-center" style={{height: bookHeight}}>
+                    <Hidden implementation="js" mdDown>
+                      <HTMLFlipBook size='stretch' width={1283} height={1797} usePortrait={true}>
+                        {images.map((image, i) =>
+                          <Image key={i + 1} src={image} style={{width: '100%'}}/>
+                        )}
+                      </HTMLFlipBook>
+                    </Hidden>
+
+                    <Hidden implementation="js" lgUp>
+                      <Col lg={12} className="p-0 m-0">
+                        <FlipBook orientation="horizontal" flipOnTouch responsive flipOnTouchZone={100}>
+                          {images.map((image, i) =>
+                            <Image key={i + 1} src={image} style={{width: "100%"}}/>
+                          )}
+                        </FlipBook>
+                      </Col>
+                    </Hidden>
+                  </Row>
                 </Container>
               </AccordionDetails>
             </Accordion>
