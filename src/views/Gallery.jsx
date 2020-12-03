@@ -34,7 +34,7 @@ class Gallery extends Component {
   }
 
   componentDidMount() {
-    document.title = 'Gallery - The Niche Fashion Community'
+    document.title = 'Gallery - The Niche Fashion Comcomunity'
     getGalleryImages().then(r => {
       this.setState({horizontalImages: r.horizontalImages, verticalImages: r.verticalImages})
     })
