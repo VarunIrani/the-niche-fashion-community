@@ -31,25 +31,6 @@ export const team = [
 		}]
 	},
 	{
-		image: anil,
-		name: 'Dr. Anil Nair',
-		description: 'International Pageants Editor',
-		row: 1,
-		content: [
-			'Dr Anil Nair, Ambassador of Diplomatic mission, an evangelist for social goodness through his illustrious career spanning the world of community welfare. Dr Anil Nair wears multiple hats, such as, Founder of A.N Consultancy India, FMBAF, (Film Media Business, Academy & Fashion), International Pageants Editor and philanthropist. It\'s his inner zeal and passion that makes him always to work hard, learn new things and never quit.',
-			'His nature of always been thriving to stand up for the society, being humanitarian at heart to bring a difference into lives of people. With epitome of kindness and business acumen, he is a man with his head held high which has struck the perfect pose proving himself an ace in creating opportunities and redefining the fashion world.',
-			'Holder of United Nations prestigious Seven Star Medal and Global Peace Award is an added feather in his cap, Ambassador of United Nations for which he has worked and creatively contributed for a decade.',
-			'A Creative, dedicated, task maker, who thinks larger than life and ensures he accomplishes it! A rare combination of philanthropy Business acumen and talent, you will find him at happy intersection "Where passion meets purpose!"',
-			'He recently contributed in the upliftment of Women Empowerment, which has given him opportunity to associate with THE NICHE Fashion Arena International fashion magazine, India as International Pageants Editor on its Editorial Board. This has created a niche for the fashion conscious women who are with the strength of Women Empowerment with self confidence amongst them.',
-			'THE NICHE Fashion Arena International, an exclusive fashion magazine is dedicated to the global fashion community which include budding Fashion and Interior designers, Fashion models, Fashion bloggers, Fashion stylists, Fashion Choreographers, Fashion photographers n videographer, Fashion accessories merchandisers, Fashion boutiques and fashion labels, etc...',
-			'Being on the Editorial panel of this fashion magazine, he welcomes all its readers globally. "THE NICHE Fashion Arena International is the concrete platform for the Fashion Community of the world over." His message to the readers of THE NICHE Fashion Arena International.'
-		],
-		contact: [{
-			icon: <Email style={{color: COLORS.primary}}/>,
-			text: 'anconsultancyindia@gmail.com '
-		},]
-	},
-	{
 		image: shyna,
 		name: 'Shyna Sunsara',
 		description: 'Fashion Editor',
@@ -94,46 +75,3 @@ export const team = [
 		contact: []
 	}
 ]
-
-export const prTeam = [
-	{
-		image: ambika,
-		name: 'Ambika Kanapanavar',
-		description: 'PR Manager',
-		content: [
-			'Aspiring Fashion Stylist perceived her designing studies from a reputed fashion institute in India. Ambika works on selective projects as a Freelance Fashion Stylist. With unique and thoughtful concepts and its execution for the same. With aim to spread her name all over the world amongst the Fashion Community.',
-			'Presently she has undertaken her second project for a global International fashion magazine called, THE NICHE Fashion Arena International published from India. Being excited with her exploitation with global print glossy, she has this message for the readers of global fashion community of this glossy magazine, "Be destined with fashion --- ONLY THE LATEST".'
-		],
-		contact: [
-			{
-				icon: <Email style={{color: COLORS.primary}}/>,
-				text: 'ambikakanapanavar96@gmail.com '
-			}
-		]
-	},
-	{
-		image: dipali,
-		name: 'Dipali Khamar',
-		description: 'PR & Communications Head',
-		content: [
-			'Qualification: Masters in Cosmetology from VLCC',
-			'Professional Experience: Associated as Choreographer and Makeup Partner with THE NICHE Fashion Arena International magazine',
-			'Invited as jury in the Royal Queen PCMC 2020',
-			'Associated as Makeup Partner in Royal Queen PCMC 2020',
-			'Associated as Makeup Partner in Cloth Look fashion magazine 2019',
-			'Invited as Jury Mr. and Miss house of fashion 2019',
-			'Professional Qualifications:',
-			'Salon Owner of Maples Beauty Salon & SPA Worked with Pradhan Mantri Kaushal Vikas Yojna as skin & hair faculty in VLCC',
-			'Total 8 years of experience in the field of beauty.',
-			'Being a perfectionist in fashion industry in multi talented field as a strong Ramp Walker to achieving various Titles in Beauty pageants made me land up with International fashion Glossy published globally which is based in Pune.',
-			'I also own a established Make over Brand, called, Maples Beauty Salon & SPA, which gave me opportunity to associate as Official Grooming and Make over Partner with the only Global International fashion magazine THE NICHE Fashion Arena International.',
-			'I am excited with this offer which has further more openings with NICHE Group. Grabbing this opportunity, I sincerely welcome our fashion community readers with my message to the readers of the magazine to patronize it by way of subscribing the same and preserve it in their collector\'s library.'
-		],
-		contact: [
-			{
-				icon: <Email style={{color: COLORS.primary}}/>,
-				text: 'dips.khamar@gmail.com '
-			}
-		]
-	},
-];
