@@ -34,7 +34,7 @@ class Contact extends Component {
                 <Row className='mb-3'>
                   <Col xs={12} md={12} lg={7}>
                     <ResponsiveEmbed aspectRatio='1by1'>
-                      <Image src={team[0].image} alt={team[0].name}
+                      <Image src={team["1"][0].image} alt={team["1"][0].name}
                              style={{borderRadius: '100%', border: '6px solid #ffce66'}}/>
                     </ResponsiveEmbed>
                   </Col>
@@ -46,10 +46,10 @@ class Contact extends Component {
                           fontWeight: 600,
                           color: '#ffce66',
                           fontSize: 24
-                        }}>{team[0].name}</p>
+                        }}>{team["1"][0].name}</p>
                       </Col>
                       <Col xs={12} md={12}>
-                        <p style={{fontFamily: 'Poppins', fontSize: 18, color: '#ffce66'}}>{team[0].description}</p>
+                        <p style={{fontFamily: 'Poppins', fontSize: 18, color: '#ffce66'}}>{team["1"][0].description}</p>
                       </Col>
                     </Row>
                   </Col>
@@ -79,7 +79,7 @@ class Contact extends Component {
                     color: '#fff',
                     fontSize: 18
                   }}>
-                    {team[0].contact[0].text}
+                    {team["1"][0].contact[0].text}
                   </p>
                 </Row>
                 <Row className='px-3 px-md-0 px-lg-3 justify-content-center justify-content-lg-start'>
@@ -90,7 +90,7 @@ class Contact extends Component {
                     color: '#fff',
                     fontSize: 18
                   }}>
-                    {team[0].contact[1].text}
+                    {team["1"][0].contact[1].text}
                   </p>
                 </Row>
               </Col>
